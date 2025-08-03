@@ -147,7 +147,7 @@ export const EXPERIENCES = [
   {
     title: "Full Stack Developer",
     company_name: "Sagres S.p.A.",
-    icon: sagres, 
+    icon: sagres,
     iconBg: "#383E56",
     date: "Jul 2024 - Present",
     points: [
@@ -160,7 +160,7 @@ export const EXPERIENCES = [
   {
     title: "Freelance Full Stack Developer",
     company_name: "Self-employed",
-    icon: freelance, 
+    icon: freelance,
     iconBg: "#E6DEDD",
     date: "Jan 2023 - Feb 2024",
     points: [
@@ -173,7 +173,7 @@ export const EXPERIENCES = [
   {
     title: "Social Media Manager",
     company_name: "Freelance",
-    icon: social, 
+    icon: social,
     iconBg: "#383E56",
     date: "Jan 2023 - Feb 2023",
     points: [
@@ -186,7 +186,7 @@ export const EXPERIENCES = [
   {
     title: "Computer Science Student",
     company_name: "I.T.I.S. Augusto Righi",
-    icon: school, 
+    icon: school,
     iconBg: "#E6DEDD",
     date: "Sep 2012 - Jul 2017",
     points: [
@@ -364,23 +364,23 @@ export const PROJECTS = [
 
 export const SOCIALS = [
   {
-    name: "YouTube",
-    icon: youtube,
-    link: "https://www.youtube.com/@OPGAMER.",
-  },
-  {
     name: "Linkedin",
     icon: linkedin,
-    link: "https://www.linkedin.com/in/sanidhyy",
-  },
-  {
-    name: "Twitter",
-    icon: twitter,
-    link: "https://twitter.com/TechnicalShubam",
+    link: "https://www.linkedin.com/in/vincenzopirozzi-developer",
   },
   {
     name: "GitHub",
     icon: github,
     link: "https://github.com/sanidhyy",
-  },
+  }
+  // {
+  //   name: "YouTube",
+  //   icon: youtube,
+  //   link: "todo",
+  // },
+  // {
+  //   name: "Twitter",
+  //   icon: twitter,
+  //   link: "todo",
+  // }
 ] as const;
