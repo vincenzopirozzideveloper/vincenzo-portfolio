@@ -28,12 +28,12 @@
     "preview": "vite preview",
     "check-types": "tsc --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist" 
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@react-three/fiber": "^8.17.14",
     "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.14",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.5",
     "maath": "^0.10.8",
@@ -53,6 +53,7 @@
     "@types/tailwindcss": "^3.1.0",
     "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
