@@ -25,10 +25,15 @@ import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.svg";
 import typescript from "./tech/typescript.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+// import meta from "./company/meta.png";
+// import shopify from "./company/shopify.png";
+// import starbucks from "./company/starbucks.png";
+// import tesla from "./company/tesla.png";
+
+import sagres from "./company/sagres.png";
+import freelance from "./company/freelance.png";
+import social from "./company/social.png";
+import school from "./company/school.png";
 
 import project1 from "./projects/project1.png";
 import project2 from "./projects/project2.png";
@@ -47,6 +52,10 @@ import twitter from "./socials/twitter.svg";
 import youtube from "./socials/youtube.svg";
 
 export {
+  sagres,
+  freelance,
+  social,
+  school,
   backend,
   bulb,
   close,
@@ -69,10 +78,10 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  // meta,
+  // shopify,
+  // starbucks,
+  // tesla,
   project1,
   project2,
   project3,

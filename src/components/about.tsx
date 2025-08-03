@@ -45,7 +45,7 @@ export const About = () => {
       <>
         {/* Title */}
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Introduction</p>
+          <p className={styles.sectionSubText}>Professional Profile</p>
           <h2 className={styles.sectionHeadText}>Overview.</h2>
         </motion.div>
 
@@ -54,11 +54,21 @@ export const About = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="empty-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          I'm a skilled website developer with experience in TypeScript and
-          Javascript, and expertise in frameworks like React, Node.js, and
-          Three.js. I'm a quick learner and collaborate closely with clients to
-          create efficient, scalable, and user-friendly solutions that solve
-          real-world problems. Let's work together to bring your ideas to life!
+          I'm a Senior Full Stack Developer with deep expertise in backend 
+          architectures and DevSecOps practices. My approach to complex problem-solving 
+          emphasizes elegant, maintainable solutions over unnecessary over-engineering. 
+          With extensive experience in PHP/Laravel ecosystem, modern JavaScript frameworks 
+          like React and Vue.js, and containerization technologies including Docker and 
+          Kubernetes, I deliver scalable enterprise solutions.
+          <br className="sm:block hidden" />
+          <br className="sm:block hidden" />
+          My development philosophy centers on DRY principles, clean architecture, 
+          and a security-first mindset. I specialize in building RESTful APIs, 
+          implementing microservices architectures, and optimizing database performance. 
+          Through systematic code reviews, automated testing, and CI/CD pipelines, 
+          I ensure code quality while reducing deployment times by up to 60%. 
+          My commitment to continuous learning keeps me at the forefront of emerging 
+          technologies and best practices in full-stack development.
         </motion.p>
 
         {/* Service Card */}
