@@ -15,6 +15,7 @@ import { Hero } from "./hero";
 import { Navbar } from "./navbar";
 import { Tech } from "./tech";
 import { Works } from "./works";
+import { ProjectModal } from "./project-modal";
 
 export {
   About,
@@ -29,4 +30,5 @@ export {
   StarsCanvas,
   Tech,
   Works,
+  ProjectModal,
 };
