@@ -28,7 +28,8 @@
     "preview": "vite preview",
     "check-types": "tsc --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "dev-vp": "vite --host"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

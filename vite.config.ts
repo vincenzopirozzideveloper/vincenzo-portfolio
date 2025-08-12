@@ -16,5 +16,7 @@ export default defineConfig({
       }
     }
   },
-  base: "/vincenzo-portfolio"
+  server:{
+    allowedHosts: ['portfolio-dev.vm1.vincenzopirozzi.dom']
+  }
 });
