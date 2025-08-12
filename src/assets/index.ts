@@ -5,10 +5,10 @@ import backend from "./backend.png";
 import bulb from "./bulb.svg";
 import close from "./close.svg";
 import creator from "./creator.png";
-import logo from "./logo.svg";
+import logo from "./portoflio-logo.png";
 import menu from "./menu.svg";
 import mobile from "./mobile.png";
-import preview from "./preview.png";
+import preview from "./portoflio-logo.png";
 import web from "./web.png";
 
 import css from "./tech/css.png";
