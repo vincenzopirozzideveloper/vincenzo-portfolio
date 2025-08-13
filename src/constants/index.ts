@@ -368,8 +368,7 @@ export const BLOG_POSTS = [
     date: "2025-08-10",
     read_time_min: 8,
     tags: ["architecture", "microservices", "laravel", "react", "kubernetes"],
-    image:
-      "https://source.unsplash.com/featured/800x450?microservices,architecture,cloud",
+    image: "https://picsum.photos/seed/monolith-microservices/800/450",
   },
   {
     slug: "cicd-github-actions-docker-k8s",
@@ -379,8 +378,7 @@ export const BLOG_POSTS = [
     date: "2025-08-08",
     read_time_min: 7,
     tags: ["ci/cd", "devops", "github-actions", "docker", "kubernetes"],
-    image:
-      "https://source.unsplash.com/featured/800x450?cicd,devops,docker",
+    image: "https://picsum.photos/seed/cicd-docker-k8s/800/450",
   },
   {
     slug: "security-first-patterns-full-stack-devops",
@@ -390,8 +388,67 @@ export const BLOG_POSTS = [
     date: "2025-08-06",
     read_time_min: 6,
     tags: ["security", "devsecops", "threat-modeling", "secrets"],
-    image:
-      "https://source.unsplash.com/featured/800x450?cybersecurity,cloud,locks",
+    image: "https://picsum.photos/seed/security-first/800/450",
+  },
+  {
+    slug: "observability-tracing-metrics-logs",
+    title: "Observability 101: Tracing, Metrics and Logs that Matter",
+    excerpt:
+      "From black-box to glass-box systems with actionable telemetry and SLOs.",
+    date: "2025-08-05",
+    read_time_min: 5,
+    tags: ["observability", "otel", "sre"],
+    image: "https://picsum.photos/seed/observability/800/450",
+  },
+  {
+    slug: "react-performance-profiling",
+    title: "Profiling React Apps: Rendering, Memoization and Suspense",
+    excerpt:
+      "Tactics to cut wasted renders and ship smoother UIs without premature optimization.",
+    date: "2025-08-04",
+    read_time_min: 9,
+    tags: ["react", "performance", "profiling"],
+    image: "https://picsum.photos/seed/react-performance/800/450",
+  },
+  {
+    slug: "laravel-scaling-strategies",
+    title: "Scaling Laravel APIs: Queues, Caching and Horizontal Sharding",
+    excerpt:
+      "Blueprints for resilient high-throughput backends with predictable latency.",
+    date: "2025-08-03",
+    read_time_min: 7,
+    tags: ["laravel", "redis", "mysql"],
+    image: "https://picsum.photos/seed/laravel-scaling/800/450",
+  },
+  {
+    slug: "k8s-cost-optimization",
+    title: "Kubernetes Cost Optimization: Requests, HPA and Spot Instances",
+    excerpt:
+      "Practical levers to reduce cloud spend while keeping SLAs intact.",
+    date: "2025-08-02",
+    read_time_min: 6,
+    tags: ["kubernetes", "finops"],
+    image: "https://picsum.photos/seed/k8s-cost/800/450",
+  },
+  {
+    slug: "e2e-testing-strategy",
+    title: "A Pragmatic E2E Testing Strategy: What to Test and Why",
+    excerpt:
+      "Reducing flakiness with the right pyramid, tooling and fixtures.",
+    date: "2025-08-01",
+    read_time_min: 8,
+    tags: ["testing", "playwright", "cypress"],
+    image: "https://picsum.photos/seed/e2e-testing/800/450",
+  },
+  {
+    slug: "feature-flags-safe-releases",
+    title: "Feature Flags & Safe Releases: Shipping Without Fear",
+    excerpt:
+      "Gate, gradually roll out and quickly roll back with confidence.",
+    date: "2025-07-31",
+    read_time_min: 5,
+    tags: ["release", "feature-flags", "progressive-delivery"],
+    image: "https://picsum.photos/seed/feature-flags/800/450",
   },
 ] as const;
 
