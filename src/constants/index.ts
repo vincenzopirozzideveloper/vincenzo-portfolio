@@ -358,6 +358,43 @@ export const PROJECTS = [
   },
 ] as const;
 
+// Blog Posts (preview cards)
+export const BLOG_POSTS = [
+  {
+    slug: "monolith-to-microservices-laravel-react",
+    title: "From Monolith to Microservices: A Practical Migration with Laravel & React",
+    excerpt:
+      "A pragmatic roadmap to decompose a legacy monolith into independently deployable services, without disrupting delivery.",
+    date: "2025-08-10",
+    read_time_min: 8,
+    tags: ["architecture", "microservices", "laravel", "react", "kubernetes"],
+    image:
+      "https://source.unsplash.com/featured/800x450?microservices,architecture,cloud",
+  },
+  {
+    slug: "cicd-github-actions-docker-k8s",
+    title: "CI/CD for Modern Web Apps: GitHub Actions, Docker & K8s",
+    excerpt:
+      "Designing a robust pipeline from commit to production with build caching, preview deployments and progressive delivery.",
+    date: "2025-08-08",
+    read_time_min: 7,
+    tags: ["ci/cd", "devops", "github-actions", "docker", "kubernetes"],
+    image:
+      "https://source.unsplash.com/featured/800x450?cicd,devops,docker",
+  },
+  {
+    slug: "security-first-patterns-full-stack-devops",
+    title: "Hardening Your Stack: Security-first Patterns in Full Stack DevOps",
+    excerpt:
+      "Threat modeling, secrets management and minimal-privilege deployments that scale with your team.",
+    date: "2025-08-06",
+    read_time_min: 6,
+    tags: ["security", "devsecops", "threat-modeling", "secrets"],
+    image:
+      "https://source.unsplash.com/featured/800x450?cybersecurity,cloud,locks",
+  },
+] as const;
+
 export const SOCIALS = [
   {
     name: "Linkedin",

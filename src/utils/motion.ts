@@ -1,3 +1,9 @@
+import type { Transition } from "framer-motion";
+import { easeOut } from "framer-motion";
+
+type MotionDirection = "left" | "right" | "up" | "down";
+type TransitionType = Exclude<NonNullable<Transition["type"]>, undefined> | "spring" | "tween" | "inertia";
+
 // Text Variant motion
 export const textVariant = (delay?: number) => {
   return {
@@ -9,7 +15,7 @@ export const textVariant = (delay?: number) => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         duration: 1.25,
         delay: delay,
       },
@@ -19,8 +25,8 @@ export const textVariant = (delay?: number) => {
 
 // FadeIn motion
 export const fadeIn = (
-  direction: "left" | "right" | "up" | "down" | string,
-  type: string,
+  direction: MotionDirection | undefined,
+  type: TransitionType,
   delay: number,
   duration: number,
 ) => {
@@ -35,10 +41,10 @@ export const fadeIn = (
       y: 0,
       opacity: 1,
       transition: {
-        type: type,
+        type: type as TransitionType,
         delay: delay,
         duration: duration,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   };
@@ -55,10 +61,10 @@ export const zoomIn = (delay: number, duration: number) => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "tween",
+        type: "tween" as const,
         delay: delay,
         duration: duration,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   };
@@ -66,8 +72,8 @@ export const zoomIn = (delay: number, duration: number) => {
 
 // slide in motion
 export const slideIn = (
-  direction: "left" | "right" | "up" | "down" | string,
-  type: string,
+  direction: MotionDirection | undefined,
+  type: TransitionType,
   delay: number,
   duration: number,
 ) => {
@@ -80,10 +86,10 @@ export const slideIn = (
       x: 0,
       y: 0,
       transition: {
-        type: type,
+        type: type as TransitionType,
         delay: delay,
         duration: duration,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   };
