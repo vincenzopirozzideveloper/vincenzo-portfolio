@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {
   About,
   Contact,
@@ -13,6 +13,24 @@ import {
 } from "./components";
 import Footer from "./components/footer";
 import BlogPost from "./components/blog-post";
+
+// Scroll to hash component
+const ScrollToHash = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location]);
+  
+  return null;
+};
 
 // Main Layout
 const MainLayout = () => {
@@ -44,6 +62,7 @@ const MainLayout = () => {
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<MainLayout />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
