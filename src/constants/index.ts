@@ -55,6 +55,11 @@ export const NAV_LINKS = [
     link: null,
   },
   {
+    id: "blog",
+    title: "Blog",
+    link: null,
+  },
+  {
     id: "contact",
     title: "Contact",
     link: null,
