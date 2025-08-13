@@ -13,9 +13,9 @@ type BlogCardProps = (typeof BLOG_POSTS)[number] & { index: number };
 const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min }: BlogCardProps) => (
   <motion.article
     variants={fadeIn(undefined, "spring", index * 0.25, 0.6)}
-    className="bg-black-200 rounded-2xl overflow-hidden w-[320px] shrink-0 snap-start"
+    className="bg-black-200 rounded-[20px] w-[320px] shrink-0 snap-start overflow-hidden"
   >
-    <div className="aspect-video w-full overflow-hidden">
+    <div className="aspect-video w-full overflow-hidden rounded-t-[20px]">
       <img src={image} alt={title} className="w-full h-full object-cover" />
     </div>
     <div className="p-5">
@@ -66,17 +66,20 @@ export const Feedbacks = () => {
 
             {/* Horizontal scrollable list */}
             <div className={cn(styles.paddingX, "-mt-20 pb-14")}> 
-              <div className="relative overflow-hidden">
-                {/* Scroll gradients */}
+              <div className="relative">
+                {/* Mask container that clips content */}
+                <div className="overflow-hidden rounded-[20px]">
+                  {/* Horizontal scroll content */}
+                  <motion.div style={{ x }} className="flex gap-5 pb-2">
+                    {BLOG_POSTS.map((post, i) => (
+                      <BlogCard key={post.slug} index={i} {...post} />
+                    ))}
+                  </motion.div>
+                </div>
+                
+                {/* Scroll gradients on top */}
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black-100 to-transparent rounded-l-[20px] z-10" aria-hidden />
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black-100 to-transparent rounded-r-[20px] z-10" aria-hidden />
-
-                {/* Horizontal scroll content */}
-                <motion.div style={{ x }} className="flex gap-5 pb-2">
-                  {BLOG_POSTS.map((post, i) => (
-                    <BlogCard key={post.slug} index={i} {...post} />
-                  ))}
-                </motion.div>
               </div>
             </div>
           </div>
