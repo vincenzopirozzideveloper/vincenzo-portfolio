@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { BLOG_POSTS } from "../constants";
 import { SectionWrapper } from "../hoc";
@@ -10,34 +11,38 @@ import { fadeIn, textVariant } from "../utils/motion";
 type BlogCardProps = (typeof BLOG_POSTS)[number] & { index: number };
 
 // Blog Card (horizontal scroll)
-const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min }: BlogCardProps) => (
-  <motion.article
-    initial={{ opacity: 0, scale: 0.9 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    whileHover={{ y: -10 }}
-    className="bg-black-200 rounded-[20px] w-[320px] shrink-0 snap-start overflow-hidden cursor-pointer select-none"
-  >
-    <div className="aspect-video w-full overflow-hidden rounded-t-[20px]">
-      <img src={image} alt={title} className="w-full h-full object-cover" draggable="false" />
-    </div>
-    <div className="p-5">
-      <h3 className="text-white text-[18px] font-bold leading-snug line-clamp-2">{title}</h3>
-      <p className="mt-2 text-white/70 text-[14px] leading-relaxed line-clamp-3">{excerpt}</p>
-      <div className="mt-4 flex items-center justify-between text-white/50 text-[12px]">
-        <span>{new Date(date).toLocaleDateString()}</span>
-        <span>{read_time_min} min read</span>
+const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min }: BlogCardProps) => {
+  const navigate = useNavigate();
+  
+  return (
+    <motion.article
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -10 }}
+      className="bg-black-200 rounded-[20px] w-[320px] shrink-0 snap-start overflow-hidden select-none"
+    >
+      <div className="aspect-video w-full overflow-hidden rounded-t-[20px]">
+        <img src={image} alt={title} className="w-full h-full object-cover" draggable="false" />
       </div>
-      <a
-        href={`#/blog/${slug}`}
-        className="mt-4 inline-flex items-center gap-2 text-[14px] text-[#915eff] hover:text-white transition-colors"
-        aria-label={`Read ${title}`}
-      >
-        Read article →
-      </a>
-    </div>
-  </motion.article>
-);
+      <div className="p-5">
+        <h3 className="text-white text-[18px] font-bold leading-snug line-clamp-2">{title}</h3>
+        <p className="mt-2 text-white/70 text-[14px] leading-relaxed line-clamp-3">{excerpt}</p>
+        <div className="mt-4 flex items-center justify-between text-white/50 text-[12px]">
+          <span>{new Date(date).toLocaleDateString()}</span>
+          <span>{read_time_min} min read</span>
+        </div>
+        <button
+          onClick={() => navigate(`/blog/${slug}`)}
+          className="mt-4 inline-flex items-center gap-2 text-[14px] text-[#915eff] hover:text-white transition-colors cursor-pointer"
+          aria-label={`Read ${title}`}
+        >
+          Read article →
+        </button>
+      </div>
+    </motion.article>
+  );
+};
 
 
 // Feedbacks
