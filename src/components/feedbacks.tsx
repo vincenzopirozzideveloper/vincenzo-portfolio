@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 import { BLOG_POSTS } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -36,107 +36,52 @@ const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min }: B
   </motion.article>
 );
 
+
 // Feedbacks
 export const Feedbacks = () => {
-  const listRef = useRef<HTMLDivElement | null>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
 
-  const updateScrollState = useCallback(() => {
-    const el = listRef.current;
-    if (!el) return;
-    const { scrollLeft, scrollWidth, clientWidth } = el;
-    setCanScrollLeft(scrollLeft > 0);
-    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
-  }, []);
-
-  useEffect(() => {
-    updateScrollState();
-    const el = listRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", updateScrollState);
-    const onResize = () => updateScrollState();
-    window.addEventListener("resize", onResize);
-    return () => {
-      el.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("resize", onResize);
-    };
-  }, [updateScrollState]);
-
-  const scrollByCard = useCallback((direction: 1 | -1) => {
-    const el = listRef.current;
-    if (!el) return;
-    const firstCard = el.querySelector<HTMLElement>("article");
-    const step = firstCard ? firstCard.getBoundingClientRect().width + 20 : 340; // 320 + gap
-    el.scrollBy({ left: direction * step, behavior: "smooth" });
-  }, []);
-
-  const onWheel = useCallback((e: React.WheelEvent<HTMLDivElement>) => {
-    const el = listRef.current;
-    if (!el) return;
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      el.scrollLeft += e.deltaY;
-      e.preventDefault();
-    }
-  }, []);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
     <SectionWrapper>
-      <div className="mt-12 bg-black-100 rounded-[20px]">
-        <div
-          className={cn(
-            styles.padding,
-            "bg-tertiary rounded-2xl min-h-[300px]"
-          )}
-        >
-          {/* Title */}
-          <motion.div variants={textVariant()}>
-            <p className={styles.sectionSubText}>Latest posts</p>
-            <h2 className={styles.sectionHeadText}>Blog.</h2>
-          </motion.div>
-        </div>
-
-        {/* Horizontal scrollable list */}
-        <div className={cn(styles.paddingX, "-mt-20 pb-14")}> 
-          <div className="relative">
-            {/* Scroll gradients */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black-100 to-transparent rounded-l-[20px]" aria-hidden />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black-100 to-transparent rounded-r-[20px]" aria-hidden />
-
-            {/* Controls */}
-            <button
-              type="button"
-              aria-label="Scroll left"
-              onClick={() => scrollByCard(-1)}
-              className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/10 disabled:opacity-40"
-              disabled={!canScrollLeft}
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              aria-label="Scroll right"
-              onClick={() => scrollByCard(1)}
-              className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/10 disabled:opacity-40"
-              disabled={!canScrollRight}
-            >
-              ›
-            </button>
-
-            {/* List */}
+      <section ref={targetRef} className="relative h-[300vh]">
+        <div className="sticky top-0 h-screen flex flex-col justify-center">
+          <div className="mt-12 bg-black-100 rounded-[20px]">
             <div
-              ref={listRef}
-              onWheel={onWheel}
-              className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-2"
-              role="list"
+              className={cn(
+                styles.padding,
+                "bg-tertiary rounded-2xl min-h-[300px]"
+              )}
             >
-              {BLOG_POSTS.map((post, i) => (
-                <BlogCard key={post.slug} index={i} {...post} />
-              ))}
+              {/* Title */}
+              <motion.div variants={textVariant()}>
+                <p className={styles.sectionSubText}>Latest posts</p>
+                <h2 className={styles.sectionHeadText}>Blog.</h2>
+              </motion.div>
+            </div>
+
+            {/* Horizontal scrollable list */}
+            <div className={cn(styles.paddingX, "-mt-20 pb-14")}> 
+              <div className="relative overflow-hidden">
+                {/* Scroll gradients */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black-100 to-transparent rounded-l-[20px] z-10" aria-hidden />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black-100 to-transparent rounded-r-[20px] z-10" aria-hidden />
+
+                {/* Horizontal scroll content */}
+                <motion.div style={{ x }} className="flex gap-5 pb-2">
+                  {BLOG_POSTS.map((post, i) => (
+                    <BlogCard key={post.slug} index={i} {...post} />
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </SectionWrapper>
   );
 };
