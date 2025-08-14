@@ -33,6 +33,8 @@ import {
   project4,
   project5,
   project6,
+  placeholder1,
+  placeholder2,
   user1,
   user2,
   user3,
@@ -230,12 +232,100 @@ export const TESTIMONIALS = [
 // Projects
 export const PROJECTS = [
   {
-    name: "Disney+ Clone",
+    name: "Placeholder 1",
     description:
-      "Disney+ is one of the biggest streaming platforms used by millions of people world-wide and allows us to stream high quality content in 4k and various other formats",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tags: [
       {
         name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholder1,
+    source_code_link: "https://github.com",
+    live_site_link: "https://example.com",
+  },
+  {
+    name: "Placeholder 2",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholder1,
+    source_code_link: "https://github.com",
+    live_site_link: "https://example.com",
+  },
+  {
+    name: "Placeholder 3",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    tags: [
+      {
+        name: "vue",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "laravel",
+        color: "green-text-gradient",
+      },
+      {
+        name: "bootstrap",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholder1,
+    source_code_link: "https://github.com",
+    live_site_link: "https://example.com",
+  },
+  {
+    name: "Placeholder 4",
+    description:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    tags: [
+      {
+        name: "angular",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "material-ui",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholder1,
+    source_code_link: "https://github.com",
+    live_site_link: "https://example.com",
+  },
+  {
+    name: "Placeholder 5",
+    description:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    tags: [
+      {
+        name: "svelte",
         color: "blue-text-gradient",
       },
       {
@@ -247,119 +337,31 @@ export const PROJECTS = [
         color: "pink-text-gradient",
       },
     ],
-    image: project1,
-    source_code_link: "https://github.com/sanidhyy/disney-clone",
-    live_site_link: "https://clonedisneyplus.web.app/",
+    image: placeholder1,
+    source_code_link: "https://github.com",
+    live_site_link: "https://example.com",
   },
   {
-    name: "Golds Gym",
+    name: "Placeholder 6",
     description:
-      "Web application that enables users to search for fitness exercises, effective personalized positions, and recommends new exercises based on their personal preferences.",
+      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "rapidapi",
+        name: "graphql",
         color: "green-text-gradient",
       },
       {
-        name: "tailwindcss",
+        name: "styled-components",
         color: "pink-text-gradient",
       },
     ],
-    image: project2,
-    source_code_link: "https://github.com/sanidhyy/fitness-app",
-    live_site_link: "https://fitness-gym-react.netlify.app/",
-  },
-  {
-    name: "Shoppy",
-    description:
-      "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "syncfusion",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project3,
-    source_code_link: "https://github.com/sanidhyy/admin-dashboard",
-    live_site_link: "https://shoppy-dashboard-react.netlify.app/",
-  },
-  {
-    name: "TikTok Clone",
-    description:
-      "A Next JS Web Application that enables users to upload videos of any length and size, create accounts and connect with other people just like any other social media.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "nodejs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwindcss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project4,
-    source_code_link: "https://github.com/sanidhyy/tiktok-clone",
-    live_site_link: "https://tiktok-clone-react.vercel.app/",
-  },
-  {
-    name: "Cryptoverse",
-    description:
-      "Best Cryptocurrency web application that allows users to view price, market cap and daily change in realtime for almost every cryptocurrency in the world.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rapidapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project5,
-    source_code_link: "https://github.com/sanidhyy/crypto-app",
-    live_site_link: "https://reactjscryptoapp.netlify.app/",
-  },
-  {
-    name: "Travel Advisor",
-    description:
-      "Web application that enables you to view your nearby restaurants, hotels and attractions which can be sorted by ratings, price and much more.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rapidapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "material-ui",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project6,
-    source_code_link: "https://github.com/sanidhyy/travel-advisor",
-    live_site_link: "https://travel-advisor-reactjs.netlify.app/",
+    image: placeholder1,
+    source_code_link: "https://github.com",
+    live_site_link: "https://example.com",
   },
 ] as const;
 
@@ -425,57 +427,28 @@ export const BLOG_POSTS = [
     tags: ["laravel", "redis", "mysql"],
     image: "https://picsum.photos/seed/laravel-scaling/800/450",
   },
-  {
-    slug: "k8s-cost-optimization",
-    title: "Kubernetes Cost Optimization: Requests, HPA and Spot Instances",
-    excerpt:
-      "Practical levers to reduce cloud spend while keeping SLAs intact.",
-    date: "2025-08-02",
-    read_time_min: 6,
-    tags: ["kubernetes", "finops"],
-    image: "https://picsum.photos/seed/k8s-cost/800/450",
-  },
-  {
-    slug: "e2e-testing-strategy",
-    title: "A Pragmatic E2E Testing Strategy: What to Test and Why",
-    excerpt:
-      "Reducing flakiness with the right pyramid, tooling and fixtures.",
-    date: "2025-08-01",
-    read_time_min: 8,
-    tags: ["testing", "playwright", "cypress"],
-    image: "https://picsum.photos/seed/e2e-testing/800/450",
-  },
-  {
-    slug: "feature-flags-safe-releases",
-    title: "Feature Flags & Safe Releases: Shipping Without Fear",
-    excerpt:
-      "Gate, gradually roll out and quickly roll back with confidence.",
-    date: "2025-07-31",
-    read_time_min: 5,
-    tags: ["release", "feature-flags", "progressive-delivery"],
-    image: "https://picsum.photos/seed/feature-flags/800/450",
-  },
 ] as const;
 
+// Github and Linkedin links
 export const SOCIALS = [
   {
-    name: "Linkedin",
-    icon: linkedin,
-    link: "https://www.linkedin.com/in/vincenzopirozzi-developer",
-  },
-  {
-    name: "GitHub",
+    name: "github",
     icon: github,
     link: "https://github.com/sanidhyy",
-  }
-  // {
-  //   name: "YouTube",
-  //   icon: youtube,
-  //   link: "todo",
-  // },
-  // {
-  //   name: "Twitter",
-  //   icon: twitter,
-  //   link: "todo",
-  // }
+  },
+  {
+    name: "youtube",
+    icon: youtube,
+    link: "https://www.youtube.com/@TechnicalVincent2004",
+  },
+  {
+    name: "linkedin",
+    icon: linkedin,
+    link: "https://linkedin.com/in/vincenzo-pirozzi-cto",
+  },
+  {
+    name: "twitter",
+    icon: twitter,
+    link: "https://twitter.com",
+  },
 ] as const;

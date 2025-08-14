@@ -45,6 +45,9 @@ import project6 from "./projects/project6.png";
 import images5 from "./images5.png";
 import images6 from "./images6.png";
 
+import placeholder1 from "./placeholder1.png";
+import placeholder2 from "./placeholder2.png";
+
 import user1 from "./testimonials/user1.jpg";
 import user2 from "./testimonials/user2.jpg";
 import user3 from "./testimonials/user3.jpg";
@@ -93,6 +96,8 @@ export {
   project6,
   images5,
   images6,
+  placeholder1,
+  placeholder2,
   user1,
   user2,
   user3,
