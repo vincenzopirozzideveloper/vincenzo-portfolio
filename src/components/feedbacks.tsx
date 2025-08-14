@@ -45,7 +45,7 @@ const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min, isD
             <span>{new Date(date).toLocaleDateString()}</span>
             <span>{read_time_min} min read</span>
           </div>
-          <button
+          <motion.button
             onClick={() => !isDragging && navigate(`/blog/${slug}`)}
             className="mt-4 inline-flex items-center gap-2 text-[14px] text-[#915eff]/60 hover:text-[#915eff] transition-colors cursor-pointer group/btn"
             aria-label={`Read ${title}`}
@@ -54,7 +54,7 @@ const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min, isD
           >
             Read article 
             <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
-          </button>
+          </motion.button>
         </div>
       </div>
     </motion.article>
