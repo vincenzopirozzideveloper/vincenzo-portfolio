@@ -130,7 +130,7 @@ export const About = () => {
             </p>
             <h2 className="text-[#1a1a1a] font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]" 
                 style={{ fontFamily: 'Inter, sans-serif' }}>
-              Overview.
+              About.
             </h2>
           </motion.div>
 
