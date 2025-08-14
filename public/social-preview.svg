@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0616"/>
+      <stop offset="100%" stop-color="#140C2A"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#915EFF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#915EFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#7A4DD8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#7A4DD8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B497FF"/>
+      <stop offset="50%" stop-color="#915EFF"/>
+      <stop offset="100%" stop-color="#5B2EE6"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="24" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Brand block -->
+  <g transform="translate(120, 120)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="220" height="220" rx="40" fill="#0E0A1D" stroke="url(#g1)" stroke-width="3"/>
+    <!-- Mini monogram V in heavy font -->
+    <g transform="translate(110,110)">
+      <text x="0" y="28" text-anchor="middle" fill="#FFFFFF" font-family="Montserrat, Poppins, system-ui" font-weight="900" font-size="120">V</text>
+    </g>
+  </g>
+
+  <!-- Title and subtitle -->
+  <g transform="translate(380, 150)">
+    <text x="0" y="0" fill="white" font-family="Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell" font-weight="800" font-size="56" letter-spacing="1">Vincenzo Pirozzi</text>
+    <text x="0" y="64" fill="#C7B6FF" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell" font-weight="600" font-size="28">Full Stack Developer · DevSecOps</text>
+    <rect x="0" y="96" width="520" height="2" fill="#2B1E52"/>
+    <text x="0" y="150" fill="#B9B9C9" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell" font-weight="400" font-size="22">
+      React · TypeScript · Three.js · Laravel · Kubernetes
+    </text>
+  </g>
+
+  <!-- Accent lines -->
+  <g opacity="0.35">
+    <rect x="60" y="540" width="1080" height="2" fill="url(#g1)"/>
+    <rect x="60" y="560" width="840" height="2" fill="url(#g1)"/>
+  </g>
+</svg>

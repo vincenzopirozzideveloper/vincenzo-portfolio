@@ -13,11 +13,16 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
-  cursor: none !important;
 }
 
-a, button, [data-cursor-project] {
-  cursor: none !important;
+/* Custom cursor default: hide system cursor globally */
+body {
+  cursor: none;
+}
+
+/* Restore native cursor on interactive elements */
+a, button, input, textarea, select, label {
+  cursor: auto;
 }
 
 /* Custom scrollbar for modal */

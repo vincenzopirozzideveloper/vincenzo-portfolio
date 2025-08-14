@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { CustomCursor } from "./custom-cursor";
 
 import { styles } from "../styles";
 import { fadeIn } from "../utils/motion";
@@ -27,7 +28,8 @@ const BlogPost = () => {
   }
   
   return (
-    <div className="relative z-0 bg-primary min-h-screen">
+    <div className="relative z-0 min-h-screen" style={{ backgroundColor: '#000000' }}>
+      <CustomCursor />
       <div className="relative overflow-hidden">
         <div className={`${styles.paddingX} max-w-7xl mx-auto relative z-0 pt-24 pb-12`}>
           <button
@@ -69,7 +71,7 @@ const BlogPost = () => {
           variants={fadeIn("up", "spring", 0.3, 1)}
           initial="hidden"
           animate="show"
-          className="bg-tertiary rounded-2xl p-8 md:p-12"
+          className="bg-black rounded-2xl p-8 md:p-12 border border-white/10"
         >
           {/* Hero Image */}
           <img 
