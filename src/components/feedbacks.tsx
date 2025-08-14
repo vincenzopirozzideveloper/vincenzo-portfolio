@@ -8,10 +8,10 @@ import { styles } from "../styles";
 import { cn } from "../utils/lib";
 import { fadeIn, textVariant } from "../utils/motion";
 
-type BlogCardProps = (typeof BLOG_POSTS)[number] & { index: number };
+type BlogCardProps = (typeof BLOG_POSTS)[number] & { index: number, isDragging: boolean };
 
 // Blog Card (horizontal scroll)
-const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min }: BlogCardProps) => {
+const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min, isDragging }: BlogCardProps) => {
   const navigate = useNavigate();
   
   return (
@@ -46,10 +46,11 @@ const BlogCard = ({ index, slug, title, excerpt, image, date, read_time_min }: B
             <span>{read_time_min} min read</span>
           </div>
           <button
-            onClick={() => navigate(`/blog/${slug}`)}
+            onClick={() => !isDragging && navigate(`/blog/${slug}`)}
             className="mt-4 inline-flex items-center gap-2 text-[14px] text-[#915eff]/60 hover:text-[#915eff] transition-colors cursor-pointer group/btn"
             aria-label={`Read ${title}`}
             style={{ fontFamily: 'Montserrat, sans-serif' }}
+            whileTap={{ scale: 0.95 }}
           >
             Read article 
             <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
@@ -156,7 +157,7 @@ export const Feedbacks = () => {
                     dragTransition={{ power: 0.3, timeConstant: 200 }}
                   >
                     {BLOG_POSTS.map((post, i) => (
-                      <BlogCard key={post.slug} index={i} {...post} />
+                      <BlogCard key={post.slug} index={i} isDragging={isDragging} {...post} />
                     ))}
                   </motion.div>
                 </div>
