@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { ProjectModalEnhanced } from "./project-modal-enhanced";
-import { images5 } from "../assets";
 
 // Works component with scroll-based animations
 export const Works = () => {
@@ -227,7 +226,7 @@ export const Works = () => {
                         {/* Image container */}
                         <div className="relative h-full overflow-hidden">
                           <motion.img 
-                            src={index === 0 ? images5 : project.image} 
+                            src={project.image} 
                             alt={project.name}
                             className="w-full h-full object-cover"
                             animate={{
