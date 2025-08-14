@@ -5,6 +5,7 @@ export const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHoveringProject, setIsHoveringProject] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -35,11 +36,28 @@ export const CustomCursor = () => {
     window.addEventListener('mouseout', handleMouseLeave);
     document.addEventListener('mouseleave', handleMouseOut);
 
+    // Check for modal state
+    const checkModalState = () => {
+      const modalElement = document.querySelector('[data-modal-open]');
+      setIsModalOpen(!!modalElement);
+    };
+    
+    // Use MutationObserver to detect modal changes
+    const observer = new MutationObserver(checkModalState);
+    observer.observe(document.body, { 
+      attributes: true, 
+      attributeFilter: ['data-modal-open'],
+      subtree: true 
+    });
+    
+    checkModalState();
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseover', handleMouseEnter);
       window.removeEventListener('mouseout', handleMouseLeave);
       document.removeEventListener('mouseleave', handleMouseOut);
+      observer.disconnect();
     };
   }, []);
 
@@ -73,22 +91,28 @@ export const CustomCursor = () => {
         >
           {/* Outer ring */}
           <motion.div
-            className="w-10 h-10 rounded-full border-2 border-[#915eff]"
+            className="w-10 h-10 rounded-full border-2"
             animate={{
               opacity: isHoveringProject ? 0.3 : 0.8,
+              borderColor: isModalOpen ? '#1a1a1a' : '#915eff',
             }}
             style={{
               boxShadow: isHoveringProject 
-                ? '0 0 30px rgba(145, 94, 255, 0.6)' 
-                : '0 0 15px rgba(145, 94, 255, 0.3)',
+                ? isModalOpen 
+                  ? '0 0 30px rgba(26, 26, 26, 0.6)' 
+                  : '0 0 30px rgba(145, 94, 255, 0.6)'
+                : isModalOpen
+                  ? '0 0 15px rgba(26, 26, 26, 0.3)'
+                  : '0 0 15px rgba(145, 94, 255, 0.3)',
             }}
           />
           
           {/* Center dot */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-[#915eff] rounded-full"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full"
             animate={{
               scale: isHoveringProject ? 0 : 1,
+              backgroundColor: isModalOpen ? '#1a1a1a' : '#915eff',
             }}
           />
         </motion.div>

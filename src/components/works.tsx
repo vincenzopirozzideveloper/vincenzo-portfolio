@@ -2,11 +2,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { SectionWrapper } from "../hoc";
+import { ProjectModalEnhanced } from "./project-modal-enhanced";
+import { images5 } from "../assets";
 
 // Works component with scroll-based animations
 export const Works = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -198,6 +202,12 @@ export const Works = () => {
                     style={{
                       height: '400px',
                     }}
+                    onClick={() => {
+                      if (index === 0) { // Only first project opens modal
+                        setSelectedProject(project);
+                        setIsModalOpen(true);
+                      }
+                    }}
                   >
                     <div className="relative h-full">
                       {/* Card glow */}
@@ -217,7 +227,7 @@ export const Works = () => {
                         {/* Image container */}
                         <div className="relative h-full overflow-hidden">
                           <motion.img 
-                            src={project.image} 
+                            src={index === 0 ? images5 : project.image} 
                             alt={project.name}
                             className="w-full h-full object-cover"
                             animate={{
@@ -292,6 +302,13 @@ export const Works = () => {
           </div>
         </div>
       </div>
+      
+      {/* Enhanced Modal */}
+      <ProjectModalEnhanced
+        isOpen={isModalOpen}
+        project={selectedProject}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
