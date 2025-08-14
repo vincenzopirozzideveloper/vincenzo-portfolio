@@ -14,6 +14,7 @@ import {
 } from "./components";
 import Footer from "./components/footer";
 import BlogPost from "./components/blog-post";
+import { CustomCursor } from "./components/custom-cursor";
 
 // Scroll to hash component
 const ScrollToHash = () => {
@@ -41,6 +42,7 @@ const ScrollToHash = () => {
 const MainLayout = () => {
   return (
     <div className="relative z-0 bg-primary">
+      <CustomCursor />
       <Navbar />
       <Hero />
       <About />
