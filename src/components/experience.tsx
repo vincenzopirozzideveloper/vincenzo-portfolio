@@ -60,23 +60,29 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => (
 // Experience
 export const Experience = () => {
   return (
-    <SectionWrapper idName="work">
-      <>
-        {/* Title */}
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>What I have done so far</p>
-          <h2 className={styles.sectionHeadText}>Work Experience.</h2>
-        </motion.div>
+    <div className="relative bg-gradient-to-b from-[#f5f5f5] via-white to-[#fafafa]">
+      <SectionWrapper idName="work">
+        <>
+          {/* Title */}
+          <motion.div variants={textVariant()}>
+            <p className="text-[#915eff] text-sm font-medium tracking-wider uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              What I have done so far
+            </p>
+            <h2 className="text-gray-900 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Work Experience.
+            </h2>
+          </motion.div>
 
-        {/* Experience Card */}
-        <div className="empty-20 flex flex-col">
-          <VerticalTimeline>
-            {EXPERIENCES.map((experience, i) => (
-              <ExperienceCard key={i} experience={experience} />
-            ))}
-          </VerticalTimeline>
-        </div>
-      </>
-    </SectionWrapper>
+          {/* Experience Card */}
+          <div className="empty-20 flex flex-col">
+            <VerticalTimeline>
+              {EXPERIENCES.map((experience, i) => (
+                <ExperienceCard key={i} experience={experience} />
+              ))}
+            </VerticalTimeline>
+          </div>
+        </>
+      </SectionWrapper>
+    </div>
   );
 };
