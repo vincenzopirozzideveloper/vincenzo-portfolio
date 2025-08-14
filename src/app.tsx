@@ -50,10 +50,12 @@ const MainLayout = () => {
       <ComputerShowcase />
       <Tech />
       <Works />
-      <Feedbacks />
+      <div style={{ backgroundColor: '#000000' }}>
+        <Feedbacks />
+      </div>
 
       {/* Contact */}
-      <div className="relative z-0">
+      <div className="relative z-0" style={{ backgroundColor: '#000000' }}>
         <Contact />
         <StarsCanvas />
       </div>

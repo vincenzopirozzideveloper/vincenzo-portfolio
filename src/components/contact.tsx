@@ -122,110 +122,131 @@ export const Contact = () => {
   };
 
   return (
-    <SectionWrapper idName="contact">
-      <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-        <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}
-          className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
-        >
-          {/* Title */}
-          <p className={styles.sectionSubText}>Get in touch</p>
-          <h3 className={styles.sectionHeadText}>Contact.</h3>
-
-          {/* Form */}
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="mt-12 flex flex-col gap-8"
+    <div style={{ backgroundColor: 'white' }}>
+      <SectionWrapper idName="contact">
+        <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+          <motion.div
+            variants={slideIn("left", "tween", 0.2, 1)}
+            className="flex-[0.75] bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-200"
           >
-            {/* Name */}
-            <label htmlFor="name" className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Name*</span>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="John Doe"
-                title="What's your name?"
-                disabled={loading}
-                aria-disabled={loading}
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium disabled:bg-tertiary/20 disabled:text-white/60"
-              />
+            {/* Title */}
+            <p className="text-gray-600 text-sm font-medium tracking-wider uppercase" 
+               style={{ fontFamily: 'Inter, sans-serif' }}>
+              Get in touch
+            </p>
+            <h3 className="text-gray-900 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] mt-2" 
+                style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Contact.
+            </h3>
 
-              {/* Invalid Name */}
-              <span className="text-red-400 mt-2 hidden" id="name-error">
-                Invalid Name!
-              </span>
-            </label>
-
-            {/* Email */}
-            <label htmlFor="email" className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Email*</span>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="johndoe@email.com"
-                title="What's your email?"
-                disabled={loading}
-                aria-disabled={loading}
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium disabled:bg-tertiary/20 disabled:text-white/60"
-              />
-
-              {/* Invalid Email */}
-              <span className="text-red-400 mt-2 hidden" id="email-error">
-                Invalid E-mail!
-              </span>
-            </label>
-
-            {/* Message */}
-            <label htmlFor="message" className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Message*</span>
-              <textarea
-                rows={7}
-                name="message"
-                id="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Hello there!"
-                title="What do you want to say?"
-                disabled={loading}
-                aria-disabled={loading}
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium disabled:bg-tertiary/20 disabled:text-white/60 disabled:resize-none"
-              />
-
-              {/* Invalid Message */}
-              <span className="text-red-400 mt-2 hidden" id="message-error">
-                Invalid Message!
-              </span>
-            </label>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              title={loading ? "Sending..." : "Send"}
-              className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl disabled:bg-tertiary/20 disabled:text-white/60"
-              disabled={loading}
-              aria-disabled={loading}
+            {/* Form */}
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="mt-12 flex flex-col gap-8"
             >
-              {/* check loader state */}
-              {loading ? "Sending..." : "Send"}
-            </button>
-          </form>
-        </motion.div>
+              {/* Name */}
+              <label htmlFor="name" className="flex flex-col">
+                <span className="text-gray-700 font-medium mb-4" 
+                      style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Your Name*
+                </span>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="John Doe"
+                  title="What's your name?"
+                  disabled={loading}
+                  aria-disabled={loading}
+                  className="bg-gray-50 py-4 px-6 placeholder:text-gray-400 text-gray-900 rounded-lg outline-none border border-gray-200 font-medium disabled:bg-gray-100 disabled:text-gray-400 focus:border-[#915eff]/50 focus:bg-white transition-all"
+                  style={{ fontFamily: 'Inter, sans-serif' }}
+                />
 
-        {/* Earth Model */}
-        <motion.div
-          variants={slideIn("right", "tween", 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
-        >
-          <EarthCanvas />
-        </motion.div>
-      </div>
-    </SectionWrapper>
+                {/* Invalid Name */}
+                <span className="text-red-500 mt-2 hidden" id="name-error">
+                  Invalid Name!
+                </span>
+              </label>
+
+              {/* Email */}
+              <label htmlFor="email" className="flex flex-col">
+                <span className="text-gray-700 font-medium mb-4" 
+                      style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Your Email*
+                </span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="johndoe@email.com"
+                  title="What's your email?"
+                  disabled={loading}
+                  aria-disabled={loading}
+                  className="bg-gray-50 py-4 px-6 placeholder:text-gray-400 text-gray-900 rounded-lg outline-none border border-gray-200 font-medium disabled:bg-gray-100 disabled:text-gray-400 focus:border-[#915eff]/50 focus:bg-white transition-all"
+                  style={{ fontFamily: 'Inter, sans-serif' }}
+                />
+
+                {/* Invalid Email */}
+                <span className="text-red-500 mt-2 hidden" id="email-error">
+                  Invalid E-mail!
+                </span>
+              </label>
+
+              {/* Message */}
+              <label htmlFor="message" className="flex flex-col">
+                <span className="text-gray-700 font-medium mb-4" 
+                      style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Your Message*
+                </span>
+                <textarea
+                  rows={7}
+                  name="message"
+                  id="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Hello there!"
+                  title="What do you want to say?"
+                  disabled={loading}
+                  aria-disabled={loading}
+                  className="bg-gray-50 py-4 px-6 placeholder:text-gray-400 text-gray-900 rounded-lg outline-none border border-gray-200 font-medium disabled:bg-gray-100 disabled:text-gray-400 disabled:resize-none focus:border-[#915eff]/50 focus:bg-white transition-all"
+                  style={{ fontFamily: 'Inter, sans-serif' }}
+                />
+
+                {/* Invalid Message */}
+                <span className="text-red-500 mt-2 hidden" id="message-error">
+                  Invalid Message!
+                </span>
+              </label>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                title={loading ? "Sending..." : "Send"}
+                className="bg-[#915eff] text-white py-3 px-8 outline-none w-fit font-bold rounded-xl disabled:bg-[#915eff]/30 disabled:text-white/60 hover:bg-[#7a4dd8] transition-colors shadow-lg shadow-[#915eff]/25"
+                disabled={loading}
+                aria-disabled={loading}
+                style={{ fontFamily: 'Montserrat, sans-serif' }}
+              >
+                {/* check loader state */}
+                {loading ? "Sending..." : "Send"}
+              </button>
+            </form>
+          </motion.div>
+
+          {/* Earth Model */}
+          <motion.div
+            variants={slideIn("right", "tween", 0.2, 1)}
+            className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+          >
+            <EarthCanvas />
+          </motion.div>
+        </div>
+      </SectionWrapper>
+    </div>
   );
 };

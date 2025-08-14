@@ -10,11 +10,13 @@ const Footer = () => {
     <nav
       className={cn(
         styles.paddingX,
-        "w-full flex items-center py-8 bg-primary border-t border-t-secondary/5"
+        "w-full flex items-center py-8 border-t border-t-white/5"
       )}
+      style={{ backgroundColor: '#020202' }}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <p className="text-white text-md font-bold flex">
+        <p className="text-gray-400 text-sm font-medium flex" 
+           style={{ fontFamily: 'Inter, sans-serif' }}>
           &copy; Vincenzo {new Date().getFullYear()}. All rights reserved.
         </p>
 
@@ -23,10 +25,14 @@ const Footer = () => {
           {SOCIALS.map((social) => (
             <li
               key={social.name}
-              className="text-secondary font-poppins font-medium cursor-pointer text-[16px] opacity-80 hover:opacity-100 transition"
+              className="opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               <Link to={social.link} target="_blank" rel="noreferrer noopener">
-                <img src={social.icon} alt={social.name} className="h-6 w-6" />
+                <img 
+                  src={social.icon} 
+                  alt={social.name} 
+                  className="h-6 w-6 invert opacity-80" 
+                />
               </Link>
             </li>
           ))}
