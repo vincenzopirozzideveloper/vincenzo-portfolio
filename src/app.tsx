@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {
   About,
@@ -19,6 +19,10 @@ const ScrollToHash = () => {
   const location = useLocation();
   
   useEffect(() => {
+    // Always scroll to top on page load/refresh
+    window.scrollTo(0, 0);
+    
+    // Then handle hash navigation if present
     if (location.hash) {
       setTimeout(() => {
         const element = document.getElementById(location.hash.slice(1));
@@ -34,14 +38,10 @@ const ScrollToHash = () => {
 
 // Main Layout
 const MainLayout = () => {
-  const [hide, setHide] = useState(true);
-  
   return (
     <div className="relative z-0 bg-primary">
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-        <Navbar hide={hide} />
-        <Hero />
-      </div>
+      <Navbar />
+      <Hero />
       <About />
       <Experience />
       <Tech />
@@ -60,6 +60,11 @@ const MainLayout = () => {
 
 // App
 const App = () => {
+  useEffect(() => {
+    // Force scroll to top on initial app mount
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <BrowserRouter>
       <ScrollToHash />

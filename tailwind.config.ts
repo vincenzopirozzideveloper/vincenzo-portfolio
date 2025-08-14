@@ -19,7 +19,7 @@ export default {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
+        // Removed hero-pattern as we're using gradient orbs instead
       },
     },
   },

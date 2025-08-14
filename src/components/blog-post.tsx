@@ -28,7 +28,7 @@ const BlogPost = () => {
   
   return (
     <div className="relative z-0 bg-primary min-h-screen">
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <div className="relative overflow-hidden">
         <div className={`${styles.paddingX} max-w-7xl mx-auto relative z-0 pt-24 pb-12`}>
           <button
             onClick={() => {

@@ -1,59 +1,40 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { logo, menu, close } from "../assets";
+import { menu, close } from "../assets";
 import { NAV_LINKS } from "../constants";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
 
-type NavbarProps = {
-  hide: boolean;
-};
-
 // Navbar
-export const Navbar = ({ hide }: NavbarProps) => {
+export const Navbar = () => {
   // state variables
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-  const [isAtBottom, setIsAtBottom] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsAtBottom(true);
-      } else {
-        setIsAtBottom(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav
       className={cn(
         styles.paddingX,
-        "w-full flex items-center py-5 fixed top-0 z-20 bg-primary",
-        isAtBottom || hide ? "mt-0" : "mt-20"
+        "w-full flex items-center py-5 fixed top-0 z-20 backdrop-blur-md border-b border-[#915eff]/20 shadow-lg"
       )}
+      style={{ 
+        backgroundColor: 'rgba(2, 2, 2, 0.8)',
+        boxShadow: '0 4px 30px rgba(145, 94, 255, 0.1)'
+      }}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        {/* Logo */}
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
-        >
-          <img src={logo} alt="Logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Vincenzo&nbsp;<span className="sm:block hidden">| Developer</span>
-          </p>
-        </Link>
+        {/* Availability Status */}
+        <div className="flex items-center gap-3">
+          <div className="relative">
+            <div className="w-2 h-2 bg-[#915eff] rounded-full animate-pulse" />
+            <div className="absolute inset-0 w-2 h-2 bg-[#915eff] rounded-full animate-ping" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-white text-sm font-medium">Available for project</span>
+            <span className="text-white/50 text-xs">EARLY FEB 2025</span>
+          </div>
+        </div>
 
         {/* Nav Links (Desktop) */}
         <ul className="list-none hidden sm:flex flex-row gap-10">
