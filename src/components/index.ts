@@ -16,6 +16,7 @@ import { Navbar } from "./navbar";
 import { Tech } from "./tech";
 import { Works } from "./works";
 import { ProjectModal } from "./project-modal";
+import { ComputerShowcase } from "./computer-showcase";
 
 export {
   About,
@@ -31,4 +32,5 @@ export {
   Tech,
   Works,
   ProjectModal,
+  ComputerShowcase,
 };

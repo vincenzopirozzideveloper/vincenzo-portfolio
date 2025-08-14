@@ -10,6 +10,7 @@ import {
   Tech,
   Works,
   StarsCanvas,
+  ComputerShowcase,
 } from "./components";
 import Footer from "./components/footer";
 import BlogPost from "./components/blog-post";
@@ -44,6 +45,7 @@ const MainLayout = () => {
       <Hero />
       <About />
       <Experience />
+      <ComputerShowcase />
       <Tech />
       <Works />
       <Feedbacks />
