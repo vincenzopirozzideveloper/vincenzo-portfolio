@@ -381,7 +381,7 @@ export const BLOG_POSTS = [
     date: "2025-08-10",
     read_time_min: 8,
     tags: ["architecture", "microservices", "laravel", "react", "kubernetes"],
-    image: "https://picsum.photos/seed/monolith-microservices/800/450",
+    image: placeholder1,
   },
   {
     slug: "cicd-github-actions-docker-k8s",
@@ -391,7 +391,7 @@ export const BLOG_POSTS = [
     date: "2025-08-08",
     read_time_min: 7,
     tags: ["ci/cd", "devops", "github-actions", "docker", "kubernetes"],
-    image: "https://picsum.photos/seed/cicd-docker-k8s/800/450",
+    image: placeholder1,
   },
   {
     slug: "security-first-patterns-full-stack-devops",
@@ -401,7 +401,7 @@ export const BLOG_POSTS = [
     date: "2025-08-06",
     read_time_min: 6,
     tags: ["security", "devsecops", "threat-modeling", "secrets"],
-    image: "https://picsum.photos/seed/security-first/800/450",
+    image: placeholder1,
   },
   {
     slug: "observability-tracing-metrics-logs",
@@ -411,7 +411,7 @@ export const BLOG_POSTS = [
     date: "2025-08-05",
     read_time_min: 5,
     tags: ["observability", "otel", "sre"],
-    image: "https://picsum.photos/seed/observability/800/450",
+    image: placeholder1,
   },
   {
     slug: "react-performance-profiling",
@@ -421,7 +421,7 @@ export const BLOG_POSTS = [
     date: "2025-08-04",
     read_time_min: 9,
     tags: ["react", "performance", "profiling"],
-    image: "https://picsum.photos/seed/react-performance/800/450",
+    image: placeholder1,
   },
   {
     slug: "laravel-scaling-strategies",
@@ -431,7 +431,7 @@ export const BLOG_POSTS = [
     date: "2025-08-03",
     read_time_min: 7,
     tags: ["laravel", "redis", "mysql"],
-    image: "https://picsum.photos/seed/laravel-scaling/800/450",
+    image: placeholder1,
   },
 ] as const;
 
