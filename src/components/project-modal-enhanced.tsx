@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
-import { images6 } from "../assets";
 
 interface ProjectModalEnhancedProps {
   isOpen: boolean;
@@ -212,7 +211,7 @@ export const ProjectModalEnhanced = ({ isOpen, project, onClose }: ProjectModalE
                   {/* Left side - Image */}
                   <div className="relative h-full overflow-hidden">
                     <motion.img
-                      src={images6}
+                      src={project.modal_image}
                       alt={project.name}
                       className="w-full h-full object-cover"
                       initial={{ scale: 1.2 }}

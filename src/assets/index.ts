@@ -35,15 +35,7 @@ import freelance from "./company/freelance.png";
 import social from "./company/social.png";
 import school from "./company/school.png";
 
-import project1 from "./projects/project1.png";
-import project2 from "./projects/project2.png";
-import project3 from "./projects/project3.png";
-import project4 from "./projects/project4.png";
-import project5 from "./projects/project5.png";
-import project6 from "./projects/project6.png";
 
-import images5 from "./images5.png";
-import images6 from "./images6.png";
 
 import placeholder1 from "./placeholder1.png";
 import placeholder2 from "./placeholder2.png";
@@ -88,14 +80,6 @@ export {
   // shopify,
   // starbucks,
   // tesla,
-  project1,
-  project2,
-  project3,
-  project4,
-  project5,
-  project6,
-  images5,
-  images6,
   placeholder1,
   placeholder2,
   user1,
