@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {
   About,
@@ -15,6 +15,8 @@ import {
 import Footer from "./components/footer";
 import BlogPost from "./components/blog-post";
 import { CustomCursor } from "./components/custom-cursor";
+import { MobileLayout } from "./components/mobile-layout";
+import { isMobileDevice } from "./utils/lib";
 
 // Scroll to hash component
 const ScrollToHash = () => {
@@ -40,6 +42,23 @@ const ScrollToHash = () => {
 
 // Main Layout
 const MainLayout = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(isMobileDevice());
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) {
+    return <MobileLayout />;
+  }
+
   return (
     <div className="relative z-0 bg-primary">
       <CustomCursor />

@@ -96,3 +96,9 @@ VITE_APP_EMAILJS_RECIEVER=
 - Contact form requires EmailJS credentials to function
 - Blog section uses Framer Motion's useScroll for horizontal scrolling
 - Project modal supports multiple project showcase with blur backdrop
+
+## Git Commit Guidelines
+
+- Use concise commit messages without author references
+- Format: `type: brief description`
+- No need for Claude Code attribution or co-author lines

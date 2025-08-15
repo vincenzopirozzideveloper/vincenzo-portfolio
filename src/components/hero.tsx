@@ -4,7 +4,7 @@ import vincenzoImg from "../assets/vincenzo.png";
 
 // Hero
 export const Hero = () => {
-  const containerRef = useRef<HTMLSection>(null);
+  const containerRef = useRef<HTMLElement>(null);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
