@@ -40,6 +40,15 @@ import school from "./company/school.png";
 import placeholder1 from "./placeholder1.png";
 import placeholder2 from "./placeholder2.png";
 
+import blog1 from "./blog/blog-1.png";
+import blog2 from "./blog/blog-2.png";
+import blog3 from "./blog/blog-03.png";
+import blog4 from "./blog/blog-04.png";
+import blog5 from "./blog/blog-05.png";
+import blog6 from "./blog/blog-06.png";
+import blog7 from "./blog/blog-07.png";
+import blog8 from "./blog/blog-08.png";
+
 import user1 from "./testimonials/user1.jpg";
 import user2 from "./testimonials/user2.jpg";
 import user3 from "./testimonials/user3.jpg";
@@ -82,6 +91,14 @@ export {
   // tesla,
   placeholder1,
   placeholder2,
+  blog1,
+  blog2,
+  blog3,
+  blog4,
+  blog5,
+  blog6,
+  blog7,
+  blog8,
   user1,
   user2,
   user3,
