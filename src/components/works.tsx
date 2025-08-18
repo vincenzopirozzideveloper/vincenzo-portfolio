@@ -26,14 +26,15 @@ export const Works = () => {
   }, [scrollYProgress]);
 
   return (
-    <div 
-      ref={containerRef}
-      className="relative"
-      style={{ 
-        height: `${PROJECTS.length * 100}vh`,
-        backgroundColor: '#020202' 
-      }}
-    >
+    <SectionWrapper idName="projects">
+      <div 
+        ref={containerRef}
+        className="relative"
+        style={{ 
+          height: `${PROJECTS.length * 100}vh`,
+          backgroundColor: '#020202' 
+        }}
+      >
       {/* Fixed layout container */}
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="h-full flex">
@@ -308,6 +309,8 @@ export const Works = () => {
         project={selectedProject}
         onClose={() => setIsModalOpen(false)}
       />
-    </div>
+      </div>
+    </SectionWrapper>
   );
 };
+
