@@ -49,6 +49,9 @@ import blog6 from "./blog/blog-06.png";
 import blog7 from "./blog/blog-07.png";
 import blog8 from "./blog/blog-08.png";
 
+import project1 from "../projects/project-1.png";
+import project2 from "../projects/project-2.png";
+
 import user1 from "./testimonials/user1.jpg";
 import user2 from "./testimonials/user2.jpg";
 import user3 from "./testimonials/user3.jpg";
@@ -99,6 +102,8 @@ export {
   blog6,
   blog7,
   blog8,
+  project1,
+  project2,
   user1,
   user2,
   user3,
