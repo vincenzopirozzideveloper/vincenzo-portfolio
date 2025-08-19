@@ -5,7 +5,6 @@ export const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHoveringProject, setIsHoveringProject] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -36,28 +35,12 @@ export const CustomCursor = () => {
     window.addEventListener('mouseout', handleMouseLeave);
     document.addEventListener('mouseleave', handleMouseOut);
 
-    // Check for modal state
-    const checkModalState = () => {
-      const modalElement = document.querySelector('[data-modal-open]');
-      setIsModalOpen(!!modalElement);
-    };
-    
-    // Use MutationObserver to detect modal changes
-    const observer = new MutationObserver(checkModalState);
-    observer.observe(document.body, { 
-      attributes: true, 
-      attributeFilter: ['data-modal-open'],
-      subtree: true 
-    });
-    
-    checkModalState();
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseover', handleMouseEnter);
       window.removeEventListener('mouseout', handleMouseLeave);
       document.removeEventListener('mouseleave', handleMouseOut);
-      observer.disconnect();
     };
   }, []);
 
@@ -73,9 +56,8 @@ export const CustomCursor = () => {
           y: mousePosition.y - 20,
         }}
         transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
+          type: "tween",
+          duration: 0.01,
         }}
       >
         <motion.div
@@ -85,8 +67,8 @@ export const CustomCursor = () => {
           }}
           transition={{
             type: "spring",
-            stiffness: 300,
-            damping: 20,
+            stiffness: 500,
+            damping: 15,
           }}
         >
           {/* Outer ring */}
@@ -94,16 +76,12 @@ export const CustomCursor = () => {
             className="w-10 h-10 rounded-full border-2"
             animate={{
               opacity: isHoveringProject ? 0.3 : 0.8,
-              borderColor: isModalOpen ? '#1a1a1a' : '#915eff',
+              borderColor: '#915eff',
             }}
             style={{
               boxShadow: isHoveringProject 
-                ? isModalOpen 
-                  ? '0 0 30px rgba(26, 26, 26, 0.6)' 
-                  : '0 0 30px rgba(145, 94, 255, 0.6)'
-                : isModalOpen
-                  ? '0 0 15px rgba(26, 26, 26, 0.3)'
-                  : '0 0 15px rgba(145, 94, 255, 0.3)',
+                ? '0 0 30px rgba(145, 94, 255, 0.6)'
+                : '0 0 15px rgba(145, 94, 255, 0.3)',
             }}
           />
           
@@ -112,7 +90,7 @@ export const CustomCursor = () => {
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full"
             animate={{
               scale: isHoveringProject ? 0 : 1,
-              backgroundColor: isModalOpen ? '#1a1a1a' : '#915eff',
+              backgroundColor: '#915eff',
             }}
           />
         </motion.div>
@@ -134,8 +112,8 @@ export const CustomCursor = () => {
             transition={{
               opacity: { duration: 0.2 },
               scale: { duration: 0.2 },
-              x: { type: "spring", stiffness: 500, damping: 28 },
-              y: { type: "spring", stiffness: 500, damping: 28 },
+              x: { type: "tween", duration: 0.01 },
+              y: { type: "tween", duration: 0.01 },
             }}
           >
             <div className="relative">
