@@ -239,27 +239,39 @@ export const TESTIMONIALS = [
 // Projects
 export const PROJECTS = [
   {
-    name: "Placeholder 1",
+    name: "BookStack Clone Platform",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "An advanced BookStack clone built with Laravel and hosted on a Proxmox VM. Containerized with Docker, managed via Portainer, and secured through Cloudflare DNS, it delivers a wiki-style interface with custom features and ongoing enhancements for team productivity and content organization.",
     tags: [
       {
-        name: "react",
+        name: "php",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "laravel",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "docker",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "proxmox",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "portainer",
+        color: "green-text-gradient",
+      },
+      {
+        name: "cloudflare",
         color: "pink-text-gradient",
       },
     ],
     image: placeholder1,
     modal_image: placeholder2,
-    source_code_link: "https://github.com",
-    live_site_link: "https://example.com",
+    source_code_link: "https://github.com/vincenzopirozzideveloper/BookStack",
+    live_site_link: "",
   },
   {
     name: "Placeholder 2",

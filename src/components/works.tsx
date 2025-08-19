@@ -39,7 +39,7 @@ export const Works = () => {
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="h-full flex">
           {/* Left side - Project info */}
-          <div className="w-1/2 flex flex-col justify-center pl-20">
+          <div className="w-2/5 flex flex-col justify-center pl-20 pr-8">
             {/* Project number */}
             <div className="relative h-32 overflow-hidden mb-8">
               {PROJECTS.map((_, index) => (
@@ -67,7 +67,7 @@ export const Works = () => {
             </div>
 
             {/* Project titles */}
-            <div className="relative h-20 overflow-hidden mb-6">
+            <div className="relative h-24 overflow-hidden mb-6">
               {PROJECTS.map((project, index) => (
                 <motion.div
                   key={index}
@@ -84,7 +84,7 @@ export const Works = () => {
                   }}
                 >
                   <h2 
-                    className="text-5xl font-bold text-white"
+                    className="text-4xl font-bold text-white"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {project.name}
@@ -94,11 +94,11 @@ export const Works = () => {
             </div>
 
             {/* Project descriptions */}
-            <div className="relative h-32 overflow-hidden mb-8">
+            <div className="relative h-40 overflow-hidden mb-8">
               {PROJECTS.map((project, index) => (
                 <motion.div
                   key={index}
-                  className="absolute left-0 w-[500px]"
+                  className="absolute left-0 w-full max-w-[400px]"
                   animate={{
                     y: activeIndex === index ? 0 : 
                        activeIndex > index ? -150 : 150,
@@ -111,7 +111,7 @@ export const Works = () => {
                   }}
                 >
                   <p 
-                    className="text-gray-400 text-lg leading-relaxed"
+                    className="text-gray-400 text-base leading-relaxed"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {project.description}
@@ -121,11 +121,11 @@ export const Works = () => {
             </div>
 
             {/* Tech tags */}
-            <div className="relative h-12 overflow-hidden">
+            <div className="relative h-20 overflow-hidden">
               {PROJECTS.map((project, index) => (
                 <motion.div
                   key={index}
-                  className="absolute left-0 flex gap-3"
+                  className="absolute left-0 flex flex-wrap gap-2 max-w-[400px]"
                   animate={{
                     y: activeIndex === index ? 0 : 
                        activeIndex > index ? -60 : 60,
@@ -169,7 +169,7 @@ export const Works = () => {
           </div>
 
           {/* Right side - Project cards */}
-          <div className="w-1/2 h-full overflow-hidden pr-20">
+          <div className="w-3/5 h-full overflow-hidden pr-20">
             <motion.div 
               className="flex flex-col gap-8 py-10"
               animate={{
